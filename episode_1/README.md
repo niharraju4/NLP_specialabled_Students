@@ -372,21 +372,19 @@ for both mobile and web apps.
 ```
 6.1. Create the Flask Backend in the /backend Folder
 ```bash
-Copy code
 cd backend
 python -m venv venv
 source venv/bin/activate
+```
 pip install flask razorpay
+```
 6.2. Define Payment Handling in Flask
+```
 Add Razorpay order creation as shown earlier:
-
-python
-Copy code
+```python
 import razorpay
 from flask import Flask, jsonify, request
-
 app = Flask(__name__)
-
 razorpay_client = razorpay.Client(auth=('your-razorpay-key-id', 'your-razorpay-key-secret'))
 
 @app.route('/create-order', methods=['POST'])
@@ -404,16 +402,17 @@ def create_order():
 
 if __name__ == "__main__":
     app.run(debug=True)
+```
 Step 7: Run and Test on All Platforms
-7.1. Running the Mobile App
-For Android:
 
-bash
-Copy code
+7.1. Running the Mobile App
+#### For Android:
+
+```bash
 cd packages/mobile-app
 npx react-native run-android
+```
 For iOS:
-
 ```bash
 npx react-native run-ios
 ```

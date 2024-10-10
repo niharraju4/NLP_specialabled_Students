@@ -684,3 +684,10 @@ creation and payment confirmations.
 in your AI-based learning platform.
 ```
 
+Finetuning
+
+```
+https://telnyx.com/resources/what-is-fine-tuning-ai
+
+
+```

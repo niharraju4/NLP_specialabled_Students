@@ -198,18 +198,23 @@ Each platform is capable of managing UPI payments using Razorpay.
 
 2. creating monorepository
 ```
-Let's break down the setup into a clear, step-by-step guide to help you integrate UPI, subscription services, and other features into a cross-platform mobile and web application.
-Final Project Setup for Cross-Platform Application (Mobile & Web)
+Let's break down the setup into a clear, step-by-step guide to help you integrate UPI, subscription services,
+and other features into a cross-platform mobile and web application.Final Project Setup for Cross-Platform
+Application (Mobile & Web)
 
-This guide will focus on using React Native for mobile (iOS/Android) and a web-based application using React. We will also cover how to connect your app with a Flask backend, where the business logic (such as payment handling via Razorpay) will be managed.
+This guide will focus on using React Native for mobile (iOS/Android) and a web-based application using React.
+We will also cover how to connect your app with a Flask backend, where the business logic (such as payment handling via Razorpay)
+will be managed.
 
 Step 1: Choose a Cross-Platform Framework
-For mobile (iOS and Android), you should use React Native. For web, you can either use React (web) separately or React Native Web, which allows the same React Native codebase to work on both mobile and web.
+For mobile (iOS and Android), you should use React Native. For web, you can either use React (web) separately or
+React Native Web, which allows the same React Native codebase to work on both mobile and web.
 
 React Native: Handles mobile (iOS and Android).
 React (or React Native Web): Handles the web platform.
 Step 2: Set Up a Monorepo for React Native and React Web
-To handle multiple platforms (mobile and web), I recommend using a monorepo setup, where both React Native (mobile) and React (web) share common code.
+To handle multiple platforms (mobile and web), I ll  use monorepo setup, where both React Native (mobile)
+and React (web) share common code.
 ```
 
 2.1. Install yarn Workspaces (for managing a monorepo)

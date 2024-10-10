@@ -305,11 +305,9 @@ consider using React Native Web.
 ```
 4.2. Set Up UPI Payments on Web (Using Razorpay)
 In web-app, install Razorpay’s payment handler for the web using their Checkout.js.
-
 Inside your web-app, update the App.js to include Razorpay’s Checkout handling:
 
-javascript
-Copy code
+```javascript
 import React from 'react';
 
 const handlePayment = () => {
@@ -350,27 +348,30 @@ function App() {
 
 export default App;
 This will enable UPI payments on the web.
-
+```
 Step 5: Set Up a Shared Common Folder (Optional)
 In the common folder, you can store shared code like UI components, hooks, utilities, etc., which will be used by both your mobile and web apps.
 
 Example:
 
-bash
-Copy code
+```bash
 /common
    /components
       Button.js  # Shared button component for both mobile and web
+```
+
 You can import this shared component into both your mobile app and web app by adjusting import paths:
 
-javascript
-Copy code
+```javascript
 import Button from '../../common/components/Button';
+```
 Step 6: Set Up Flask Backend for Subscription and Payment Handling
-Your Flask backend will handle payment and subscription management (using Razorpay) for both mobile and web apps.
-
+```
+Your Flask backend will handle payment and subscription management (using Razorpay) 
+for both mobile and web apps.
+```
 6.1. Create the Flask Backend in the /backend Folder
-bash
+```bash
 Copy code
 cd backend
 python -m venv venv
@@ -413,38 +414,41 @@ cd packages/mobile-app
 npx react-native run-android
 For iOS:
 
-bash
-Copy code
+```bash
 npx react-native run-ios
-7.2. Running the Web App
+```
+##### 7.2. Running the Web App
+
 Navigate to the web-app folder:
 
-bash
-Copy code
+```bash
 cd packages/web-app
 yarn start
 You can access the web app in the browser at http://localhost:3000.
-
+```
 7.3. Running the Backend
+```
 In the backend folder, run the Flask server:
-
-bash
-Copy code
+```
+```bash
 cd backend
 source venv/bin/activate
 python app.py
+```
+```
 This will run the backend on http://localhost:5000.
-
-Step 8: Deploy the Mobile App, Web App, and Backend
+```
+#### Step 8: Deploy the Mobile App, Web App, and Backend
+```
 Mobile App: Deploy the mobile app to the Google Play Store (for Android) and App Store (for iOS).
 Web App: Deploy the web app using platforms like Netlify or Vercel.
-Backend: Deploy the Flask backend on a cloud platform like AWS, Heroku, or Azure to handle payment processing for both mobile and web.
+Backend: Deploy the Flask backend on a cloud platform like AWS, Heroku, or Azure to handle
+payment processing for both mobile and web.
 Conclusion
 With this setup:
-
-You have a monorepo structure that shares code between the mobile (React Native) and web (React or React Native Web) apps.
-Both mobile and web apps handle payments through Razorpay, including UPI.
-The backend (Flask) manages the subscription logic and payment flow for both platforms.
-This unified approach ensures smooth development and deployment across multiple devices, whether it’s iOS, Android, or the web.
-
-Let me know if you need further clarification on any of these steps!
+You have a monorepo structure that shares code between the mobile (React Native) and
+web (React or React Native Web) apps.Both mobile and web apps handle payments through
+Razorpay, including UPI.The backend (Flask) manages the subscription logic and payment
+flow for both platforms.This unified approach ensures smooth development and deployment
+across multiple devices, whether it’s iOS, Android, or the web.
+```

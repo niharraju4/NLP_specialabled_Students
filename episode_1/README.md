@@ -660,16 +660,20 @@ Make sure to:
 ```
 Test all payment flows with UPI, debit/credit cards, net banking, and wallets like Paytm or PhonePe.
 Ensure smooth handling of both successful and failed payments.
-```
+
 9. Deploying the Mobile App with UPI Payments
-Once your mobile app is integrated with UPI and Indian payment methods:
-Deploy the app to Google Play Store and Apple App Store.
-Ensure your backend (Flask) is deployed to a secure cloud platform like AWS, Azure, or Heroku to handle order creation and payment confirmations.
-Summary of Steps for UPI and Indian Payment Integration
-Set up Razorpay for UPI and Indian payments, and generate API keys.
-Install Razorpay SDK in your React Native mobile app.
-Create payment flows in your app to handle UPI and other payment methods.
-Set up Flask backend to handle order creation via Razorpay’s APIs.
-Test the payment process using UPI, cards, and net banking.
-Deploy the app on iOS and Android, ensuring smooth payment handling.
-By following these steps, you'll be able to introduce UPI and other Indian payment methods for subscriptions in your AI-based learning platform.
+
+```
+-Once your mobile app is integrated with UPI and Indian payment methods:
+-Deploy the app to Google Play Store and Apple App Store.
+-Ensure your backend (Flask) is deployed to a secure cloud platform like AWS, Azure, or Heroku to handle order creation and payment confirmations.
+-Summary of Steps for UPI and Indian Payment Integration
+-Set up Razorpay for UPI and Indian payments, and generate API keys.
+-Install Razorpay SDK in your React Native mobile app.
+-Create payment flows in your app to handle UPI and other payment methods.
+-Set up Flask backend to handle order creation via Razorpay’s APIs.
+-Test the payment process using UPI, cards, and net banking.
+-Deploy the app on iOS and Android, ensuring smooth payment handling.
+-By following these steps, you'll be able to introduce UPI and other Indian payment methods for subscriptions in your AI-based learning platform.
+```
+

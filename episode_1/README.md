@@ -79,7 +79,10 @@ This directory contains both the mobile and web applications in separate folders
 
 ```
 2. /common
-This folder contains code that is shared between both mobile and web. You can store shared components (like buttons or headers), utility functions (for formatting, etc.), and even some configuration files. This ensures code reusability across platforms.
+This folder contains code that is shared between both mobile and web. You can store shared components
+(like buttons or headers),utility functions (for formatting, etc.), and even some configuration files.
+This ensures code reusability across platforms.
+
 ```
 /common/components: Shared UI components across both platforms (e.g., a common button).
 /common/utils: Shared utility functions like formatting dates or making API requests.

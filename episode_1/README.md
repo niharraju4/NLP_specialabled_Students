@@ -666,7 +666,7 @@ Make sure to:
 Test all payment flows with UPI, debit/credit cards, net banking, and wallets like Paytm or PhonePe.
 Ensure smooth handling of both successful and failed payments.
 ```
-\
+
 #### 9. Deploying the Mobile App with UPI Payments
 ```
 -Once your mobile app is integrated with UPI and Indian payment methods:

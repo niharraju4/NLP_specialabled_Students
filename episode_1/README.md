@@ -8,8 +8,9 @@ Table of content.
 Filestructure
 
 ```
-Here’s a detailed file structure for your project setup, which supports React Native for mobile (iOS/Android), React for web, and a Flask backend.
-This structure accommodates common code-sharing between platforms and manages payments, subscriptions, and UPI integrations.
+Here’s a detailed file structure for your project setup, which supports React Native for mobile (iOS/Android),
+React for web, and a Flask backend.This structure accommodates common code-sharing between platforms and manages
+payments, subscriptions, and UPI integrations.
 ```
 
 Directory Structure

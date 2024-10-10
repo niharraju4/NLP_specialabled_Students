@@ -5,7 +5,7 @@
 ####  Table of Contents
 
 1. **📁 File Structure**
-2. **🐱‍💻 Creating MongoDB Repository**
+2. **🐱‍💻 Creating Mono Repository**
 3. **💳 Integrating Payment Gateway**
 4. **🔧 Fine-tuning**
 5. **📊 Application Monitoring and Support**

@@ -91,10 +91,14 @@ This ensures code reusability across platforms.
 3. /backend
 This is your Flask backend, where you handle payments, subscriptions, and any other server-side logic.
 ```
-/routes: Flask routes for handling API requests related to payments and subscriptions (e.g., creating Razorpay orders, handling payment confirmations).
+/routes: Flask routes for handling API requests related to payments and subscriptions
+(e.g., creating Razorpay orders, handling payment confirmations).
+
 /models: Database models (if you are using a database to store user info or subscription status).
 app.py: The entry point for the Flask application.
-requirements.txt: A list of Python dependencies required for the Flask application (e.g., Flask, Razorpay SDK).
+
+requirements.txt: A list of Python dependencies required for the Flask application
+(e.g., Flask, Razorpay SDK).
 ```
 
 Setting Up Your Monorepo (Using Yarn Workspaces)
@@ -109,6 +113,7 @@ yarn init
 
 2. Add Workspaces to the Monorepo
 Edit the package.json in the project-root to define the workspaces:
+
 ```
 json
 Copy code
@@ -139,8 +144,10 @@ For web-app:
 cd packages/web-app
 yarn add axios
 ```
-4. Set Up the Shared Common Components
-If you have any common components (like buttons), place them in the common folder and reference them in both mobile and web apps.
+## 4. Set Up the Shared Common Components
+
+If you have any common components (like buttons), place them in the common folder and reference them in both
+mobile and web apps.
 For example, in common/components/Button.js:
 
 ```javascript
@@ -201,18 +208,25 @@ Each platform is capable of managing UPI payments using Razorpay.
 
 2. creating monorepository
 ```
-Let's break down the setup into a clear, step-by-step guide to help you integrate UPI, subscription services, and other features into a cross-platform mobile and web application.
+Let's break down the setup into a clear, step-by-step guide to help you integrate UPI,
+subscription services, and other features into a cross-platform mobile and web application.
+
 Final Project Setup for Cross-Platform Application (Mobile & Web)
 
-This guide will focus on using React Native for mobile (iOS/Android) and a web-based application using React. We will also cover how to connect your app with a Flask backend, where the business logic (such as payment handling via Razorpay) will be managed.
+This guide will focus on using React Native for mobile (iOS/Android) and a web-based application
+using React.We will also cover how to connect your app with a Flask backend, where the business
+logic(such as payment handling via Razorpay) will be managed.
 
 Step 1: Choose a Cross-Platform Framework
-For mobile (iOS and Android), you should use React Native. For web, you can either use React (web) separately or React Native Web, which allows the same React Native codebase to work on both mobile and web.
+For mobile (iOS and Android), you should use React Native. For web, you can either use React (web)
+separately or React Native Web, which allows the same React Native codebase to work on both mobile and web.
 
 React Native: Handles mobile (iOS and Android).
 React (or React Native Web): Handles the web platform.
 Step 2: Set Up a Monorepo for React Native and React Web
-To handle multiple platforms (mobile and web), I recommend using a monorepo setup, where both React Native (mobile) and React (web) share common code.
+To handle multiple platforms (mobile and web), I recommend using a
+monorepo setup, where both React Native (mobile) and React (web) share common code.
+
 ```
 
 2.1. Install yarn Workspaces (for managing a monorepo)
@@ -221,8 +235,7 @@ To handle multiple platforms (mobile and web), I recommend using a monorepo setu
 npm install -g yarn
 ```
 2.2. Create a Directory Structure for Your Project
-bash
-Copy code
+```bash
 /project-root
    /packages
       /mobile-app        # React Native project for mobile (iOS & Android)
@@ -230,16 +243,16 @@ Copy code
    /backend              # Flask backend for managing payments, subscriptions, etc.
    /common               # Common code (components, utilities) shared across mobile & web
    package.json          # Top-level package.json to manage dependencies
+```
+
 2.3. Initialize the Monorepo Using Yarn
 Inside your project-root, run:
-
-bash
-Copy code
+```bash
 yarn init
+```
 Then set up yarn workspaces by adding the following to your package.json:
 
-json
-Copy code
+```json
 {
   "private": true,
   "workspaces": {
@@ -250,33 +263,46 @@ Copy code
     ]
   }
 }
+```
+
+
 Step 3: Set Up the Mobile App (React Native)
 Navigate to packages/ and create your React Native app:
 
-bash
-Copy code
+```bash
 cd packages
 npx react-native init mobile-app
+```
+```bash
 cd mobile-app
-This will generate the mobile app folder structure inside packages/mobile-app. You can now set up UPI payments and subscriptions using Razorpay in this project as outlined earlier.
 
-3.1. Install Dependencies
+This will generate the mobile app folder structure inside packages/mobile-app. 
+You can now set up UPI payments and subscriptions using Razorpay in this project 
+as outlined earlier.
+```
+
+#### 3.1. Install Dependencies
 Inside your mobile-app folder, install the required dependencies (such as Razorpay):
 
-bash
-Copy code
+```bash
 yarn add react-native-razorpay @stripe/stripe-react-native axios
-3.2. Set Up Razorpay for UPI Payments
-You’ll now follow the integration steps for Razorpay as outlined in earlier sections to set up UPI payments in the mobile app. Modify your App.js to include subscription flows and handle UPI payment using Razorpay's SDK.
+```
 
+3.2. Set Up Razorpay for UPI Payments
+```
+You’ll now follow the integration steps for Razorpay as outlined in earlier sections to set up 
+UPI payments in the mobile app. Modify your App.js to include subscription flows and handle UPI 
+payment using Razorpay's SDK.
+```
 Step 4: Set Up the Web App (React or React Native Web)
+
 4.1. Navigate to the packages/ folder and create a React project:
-bash
-Copy code
+```bash
 npx create-react-app web-app
 cd web-app
-You can now build the web version of the platform. If you wish to share components between mobile and web, consider using React Native Web.
-
+You can now build the web version of the platform. If you wish to share components between mobile and web,
+consider using React Native Web.
+```
 4.2. Set Up UPI Payments on Web (Using Razorpay)
 In web-app, install Razorpay’s payment handler for the web using their Checkout.js.
 

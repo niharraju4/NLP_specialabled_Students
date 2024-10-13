@@ -280,3 +280,105 @@ Optimize performance for larger datasets
 Implement caching mechanisms to improve response times
 
 Would you like me to elaborate on any specific part of this implementation or provide more details on how to implement any additional features?
+
+---
+
+
+#### PDF Question Answering Streamlit App
+I apologize for the misunderstanding. You're looking for a simpler solution that focuses on extracting exact answers from textbooks, PDFs, or documents rather than generating AI-based responses. Let's create a streamlined version that does just that using Python and Streamlit.
+
+Here's a simplified implementation that allows users to upload a PDF document, ask questions, and get exact matches from the text:
+
+
+
+```python
+import streamlit as st
+import PyPDF2
+import re
+
+def extract_text_from_pdf(pdf_file):
+    pdf_reader = PyPDF2.PdfReader(pdf_file)
+    text = ""
+    for page in pdf_reader.pages:
+        text += page.extract_text()
+    return text
+
+def find_exact_match(text, question):
+    # Simple regex to find sentences containing all words from the question
+    words = re.findall(r'\w+', question.lower())
+    pattern = r'([^.]*?(?:\b' + r'\b.*?\b'.join(words) + r'\b)[^.]*\.)'
+    matches = re.findall(pattern, text.lower())
+    return matches
+
+def main():
+    st.title("Document Question Answering")
+
+    uploaded_file = st.file_uploader("Choose a PDF file", type="pdf")
+    
+    if uploaded_file is not None:
+        text = extract_text_from_pdf(uploaded_file)
+        st.success("PDF uploaded and processed successfully!")
+
+        question = st.text_input("Ask a question about the document:")
+        
+        if st.button("Find Answer"):
+            if question:
+                matches = find_exact_match(text, question)
+                if matches:
+                    st.subheader("Matching sentences:")
+                    for idx, match in enumerate(matches, 1):
+                        st.write(f"{idx}. {match.capitalize()}")
+                else:
+                    st.warning("No exact matches found. Try rephrasing your question.")
+            else:
+                st.warning("Please enter a question.")
+
+if __name__ == "__main__":
+    main()
+
+# requirements.txt
+streamlit==1.3.0
+PyPDF2==3.0.1
+
+```
+
+To run this application:
+
+1. Save the code in a file named `app.py`
+2. Install the required libraries:
+   ```
+   pip install streamlit PyPDF2
+   ```
+3. Run the Streamlit app:
+   ```
+   streamlit run app.py
+   ```
+
+This implementation provides a simple document question-answering system with the following features:
+
+1. PDF Upload: Users can upload a PDF document.
+2. Text Extraction: The app extracts text from the uploaded PDF.
+3. Question Input: Users can enter questions about the document.
+4. Exact Matching: The app searches for sentences in the document that contain all the words from the question.
+5. Answer Display: Matching sentences are displayed as potential answers.
+
+This approach has some limitations:
+
+1. It only works with text-based PDFs (not scanned documents).
+2. The matching is based on exact word matches, so it may miss relevant sentences if the wording is different.
+3. It doesn't understand context or semantics, just word presence.
+
+To improve this system, you could consider:
+
+1. Adding support for other document types (e.g., .docx, .txt).
+2. Implementing more advanced text processing (e.g., stemming, removing stop words).
+3. Using a more sophisticated search algorithm or a basic NLP model for better matching.
+4. Adding a feature to highlight the matching text in the original document.
+5. Implementing caching to improve performance for large documents.
+
+Would you like me to elaborate on any part of this implementation or suggest ways to enhance its functionality?
+
+
+---
+
+

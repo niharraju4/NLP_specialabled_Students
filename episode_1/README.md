@@ -10,6 +10,7 @@
 4. **🔧 Fine-tuning**
 5. **📊 Application Monitoring and Support**
 6. **🚀 CI/CD**
+7. **Findings **
 
 #### Filestructure
 
@@ -691,3 +692,5 @@ https://telnyx.com/resources/what-is-fine-tuning-ai
 
 
 ```
+
+### Findings
